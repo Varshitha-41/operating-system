@@ -1,0 +1,19 @@
+#include <dirent.h>
+#include <stdio.h>
+int main(void) {
+ DIR *d;
+ struct dirent *dir;
+ d = opendir(".");
+ if (d) {
+ while ((dir = readdir(d)) != NULL) {
+ printf("%s\n", dir->d_name);
+ }
+ closedir(d);
+ }
+ return 0;
+}
+1 comment on commit 7de57f5
+@keerthi8383
+Owner
+Author
+keerthi8383
